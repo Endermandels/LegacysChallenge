@@ -1,10 +1,10 @@
 ## CLOSED
 
 [] Make character placeholders
+[] Make placeholder background and ground
 
 ## PR 1 (Today)
 
-[] Make placeholder background and ground
 [] Make Player's Attack and Special Attack buttons
 
 ## PR 2 (This Week)
