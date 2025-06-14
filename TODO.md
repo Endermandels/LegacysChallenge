@@ -5,22 +5,22 @@
 [x] Make Player's Attack and Special Attack buttons
 [x] Make HP bar
 [x] Make MP bar
+[x] Add placeholder music
 
 ## PR 1 (Today)
 
-[] Add placeholder music
 
-## PR 2 (This Week)
+## PR 2 (Within a Week)
 
 
-## PR 3 (This Month)
+## PR 3 (Within a Month)
 
 [] Make player able to attack
+[] Make enemy able to attack
 [] Add placeholder sound effects
 
 ## BACKLOG
 
-[] Make enemy able to attack
 [] Make player able to special attack
 [] Make enemy able to attack 2
 [] Add QUICK N' DIRTY player sprite

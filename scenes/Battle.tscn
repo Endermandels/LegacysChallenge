@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://0fj0xww58cv6"]
+[gd_scene load_steps=6 format=3 uid="uid://0fj0xww58cv6"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_4kbp3"]
 [ext_resource type="PackedScene" uid="uid://346hhjuuftrp" path="res://prefabs/player.tscn" id="1_25iol"]
 [ext_resource type="PackedScene" uid="uid://bqy72asv6choy" path="res://prefabs/enemy.tscn" id="2_hhmin"]
 [ext_resource type="Theme" uid="uid://deitiiq1aopnw" path="res://assets/themes/hud_theme.tres" id="4_p073g"]
+[ext_resource type="AudioStream" uid="uid://dqep8il214ml" path="res://assets/sfx/the-return-of-the-8-bit-era-301292.mp3" id="5_sxy3n"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_4kbp3")
@@ -63,12 +64,26 @@ value = 50.0
 show_percentage = false
 
 [node name="HPLabel" type="Label" parent="."]
-custom_minimum_size = Vector2(40, 0)
 layout_direction = 3
 offset_left = -61.0
 offset_top = 160.0
-offset_right = -20.0
+offset_right = -60.0
 offset_bottom = 173.0
 theme_override_font_sizes/font_size = 8
 text = "54/54"
 horizontal_alignment = 2
+
+[node name="MPLabel" type="Label" parent="."]
+layout_direction = 3
+offset_left = -61.0
+offset_top = 169.0
+offset_right = -60.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 8
+text = "0/10"
+horizontal_alignment = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_sxy3n")
+autoplay = true
+parameters/looping = true
