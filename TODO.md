@@ -1,21 +1,21 @@
 ## CLOSED
 
-[] Make character placeholders
-[] Make placeholder background and ground
-[] Make Player's Attack and Special Attack buttons
+[x] Make character placeholders
+[x] Make placeholder background and ground
+[x] Make Player's Attack and Special Attack buttons
+[x] Make HP bar
+[x] Make MP bar
 
 ## PR 1 (Today)
 
+[] Add placeholder music
 
 ## PR 2 (This Week)
 
 
 ## PR 3 (This Month)
 
-[] Make HP bar
-[] Make MP bar
 [] Make player able to attack
-[] Add placeholder music
 [] Add placeholder sound effects
 
 ## BACKLOG

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://0fj0xww58cv6"]
+[gd_scene load_steps=5 format=3 uid="uid://0fj0xww58cv6"]
 
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_4kbp3"]
 [ext_resource type="PackedScene" uid="uid://346hhjuuftrp" path="res://prefabs/player.tscn" id="1_25iol"]
 [ext_resource type="PackedScene" uid="uid://bqy72asv6choy" path="res://prefabs/enemy.tscn" id="2_hhmin"]
+[ext_resource type="Theme" uid="uid://deitiiq1aopnw" path="res://assets/themes/hud_theme.tres" id="4_p073g"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_4kbp3")
@@ -11,12 +12,14 @@ script = ExtResource("1_4kbp3")
 offset_right = 320.0
 offset_bottom = 184.0
 color = Color(0.2808, 0.35542, 0.39, 1)
+metadata/_edit_lock_ = true
 
 [node name="Ground" type="ColorRect" parent="."]
 offset_top = 136.0
 offset_right = 320.0
 offset_bottom = 184.0
 color = Color(0.78, 0.45734, 0.2106, 1)
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_25iol")]
 position = Vector2(24, 136)
@@ -29,6 +32,7 @@ offset_left = 8.0
 offset_top = 24.0
 offset_right = 64.0
 offset_bottom = 48.0
+theme = ExtResource("4_p073g")
 text = "ATK"
 
 [node name="SpecialButton" type="Button" parent="."]
@@ -36,4 +40,35 @@ offset_left = 72.0
 offset_top = 24.0
 offset_right = 120.0
 offset_bottom = 48.0
+theme = ExtResource("4_p073g")
 text = "SP"
+
+[node name="HPBar" type="ProgressBar" parent="."]
+offset_left = 63.0
+offset_top = 164.0
+offset_right = 141.0
+offset_bottom = 167.0
+theme = ExtResource("4_p073g")
+value = 50.0
+show_percentage = false
+
+[node name="MPBar" type="ProgressBar" parent="."]
+self_modulate = Color(0, 0.566667, 1, 1)
+offset_left = 63.0
+offset_top = 172.0
+offset_right = 141.0
+offset_bottom = 175.0
+theme = ExtResource("4_p073g")
+value = 50.0
+show_percentage = false
+
+[node name="HPLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(40, 0)
+layout_direction = 3
+offset_left = -61.0
+offset_top = 160.0
+offset_right = -20.0
+offset_bottom = 173.0
+theme_override_font_sizes/font_size = 8
+text = "54/54"
+horizontal_alignment = 2

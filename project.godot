@@ -25,7 +25,6 @@ window/stretch/mode="viewport"
 
 [gui]
 
-theme/custom="res://assets/themes/hud_theme.tres"
 theme/custom_font="res://assets/fonts/Bruce Forever.ttf"
 
 [rendering]
