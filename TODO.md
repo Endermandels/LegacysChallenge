@@ -2,10 +2,10 @@
 
 [] Make character placeholders
 [] Make placeholder background and ground
+[] Make Player's Attack and Special Attack buttons
 
 ## PR 1 (Today)
 
-[] Make Player's Attack and Special Attack buttons
 
 ## PR 2 (This Week)
 
@@ -32,3 +32,4 @@
 
 ## OPTIONAL
 
+[] Main menu
