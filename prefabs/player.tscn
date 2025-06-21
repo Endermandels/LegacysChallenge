@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://346hhjuuftrp"]
+[gd_scene load_steps=4 format=3 uid="uid://346hhjuuftrp"]
 
 [ext_resource type="Texture2D" uid="uid://i3ivstqp5e06" path="res://assets/images/player.png" id="1_51wsp"]
+[ext_resource type="Script" path="res://scripts/prefabs/player.gd" id="1_jm316"]
+[ext_resource type="PackedScene" uid="uid://cys4udknhcf2y" path="res://prefabs/player_attacks/player_attack.tscn" id="3_ccruk"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "basic_attack")]
+script = ExtResource("1_jm316")
+sprite = NodePath("Sprite2D")
+basic_attack = NodePath("PlayerAttack")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_51wsp")
+
+[node name="PlayerAttack" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("3_ccruk")]
+sprite = NodePath("../Sprite2D")

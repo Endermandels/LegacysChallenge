@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cys4udknhcf2y"]
+
+[ext_resource type="Script" path="res://scripts/prefabs/player_attacks/player_attack.gd" id="1_finio"]
+
+[node name="PlayerAttack" type="Node"]
+script = ExtResource("1_finio")
