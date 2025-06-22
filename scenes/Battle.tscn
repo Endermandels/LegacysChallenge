@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://0fj0xww58cv6"]
+[gd_scene load_steps=10 format=3 uid="uid://0fj0xww58cv6"]
 
 [ext_resource type="Script" path="res://scripts/scenes/battle.gd" id="1_4kbp3"]
 [ext_resource type="PackedScene" uid="uid://346hhjuuftrp" path="res://prefabs/player.tscn" id="1_25iol"]
@@ -6,8 +6,9 @@
 [ext_resource type="Script" path="res://scripts/resources/stats.gd" id="3_gquu1"]
 [ext_resource type="Theme" uid="uid://deitiiq1aopnw" path="res://assets/themes/hud_theme.tres" id="4_p073g"]
 [ext_resource type="AudioStream" uid="uid://dqep8il214ml" path="res://assets/sfx/the-return-of-the-8-bit-era-301292.mp3" id="5_sxy3n"]
+[ext_resource type="PackedScene" uid="uid://dyyiqxdx2kqgp" path="res://prefabs/battle_state.tscn" id="7_dwx0i"]
 
-[sub_resource type="Resource" id="Resource_rs0vi"]
+[sub_resource type="Resource" id="Resource_s48gi"]
 resource_local_to_scene = true
 script = ExtResource("3_gquu1")
 hp = 50
@@ -15,12 +16,12 @@ atk = 5
 def = 5
 spd = 10
 
-[sub_resource type="Resource" id="Resource_6ya4u"]
+[sub_resource type="Resource" id="Resource_mcgpc"]
 resource_local_to_scene = true
 script = ExtResource("3_gquu1")
 hp = 35
-atk = 3
-def = 2
+atk = 10
+def = 3
 spd = 7
 
 [node name="Battle" type="Node2D"]
@@ -39,15 +40,17 @@ offset_bottom = 184.0
 color = Color(0.78, 0.45734, 0.2106, 1)
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." node_paths=PackedStringArray("enemy", "atk_btn") instance=ExtResource("1_25iol")]
+[node name="Player" parent="." node_paths=PackedStringArray("battle_state", "atk_btn", "enemy") instance=ExtResource("1_25iol")]
 position = Vector2(24, 136)
-enemy = NodePath("../Enemy")
+battle_state = NodePath("../BattleState")
 atk_btn = NodePath("../AttackButton")
-stats = SubResource("Resource_rs0vi")
+enemy = NodePath("../Enemy")
+stats = SubResource("Resource_s48gi")
 
-[node name="Enemy" parent="." instance=ExtResource("2_hhmin")]
+[node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_hhmin")]
 position = Vector2(296, 136)
-stats = SubResource("Resource_6ya4u")
+player = NodePath("../Player")
+stats = SubResource("Resource_mcgpc")
 
 [node name="AttackButton" type="Button" parent="."]
 offset_left = 8.0
@@ -109,3 +112,7 @@ stream = ExtResource("5_sxy3n")
 volume_db = -6.558
 autoplay = true
 parameters/looping = true
+
+[node name="BattleState" parent="." node_paths=PackedStringArray("player", "enemy") instance=ExtResource("7_dwx0i")]
+player = NodePath("../Player")
+enemy = NodePath("../Enemy")

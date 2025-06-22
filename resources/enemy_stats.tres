@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://cpsjfm1ts536l"]
+
+[ext_resource type="Script" path="res://scripts/resources/stats.gd" id="1_pkwyd"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_pkwyd")
+hp = 35
+atk = 10
+def = 3
+spd = 7

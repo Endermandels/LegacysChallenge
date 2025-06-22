@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyyiqxdx2kqgp"]
+
+[ext_resource type="Script" path="res://scripts/prefabs/battle_state.gd" id="1_jkl3p"]
+
+[node name="BattleState" type="Node"]
+script = ExtResource("1_jkl3p")

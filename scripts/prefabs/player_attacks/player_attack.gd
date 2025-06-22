@@ -23,6 +23,8 @@ Main functions:
 
 var stored_power: float = 0.0 ## Amount of time/number of hits stored up
 
+signal ended
+
 ## TODO: Implement
 func start(enemies: Array[Enemy]) -> void:
     pass

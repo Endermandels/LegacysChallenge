@@ -1,12 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqy72asv6choy"]
+[gd_scene load_steps=5 format=3 uid="uid://bqy72asv6choy"]
 
 [ext_resource type="Texture2D" uid="uid://vex6tt848p48" path="res://assets/images/enemy.png" id="1_2im1w"]
 [ext_resource type="Script" path="res://scripts/prefabs/enemy.gd" id="1_xgl3o"]
-[ext_resource type="Resource" uid="uid://dr11uwgqin5eg" path="res://resources/stats.tres" id="2_48ucn"]
+[ext_resource type="Resource" uid="uid://cpsjfm1ts536l" path="res://resources/enemy_stats.tres" id="2_vgs3o"]
+[ext_resource type="PackedScene" uid="uid://bgb2aspid31ps" path="res://prefabs/enemy_attacks/enemy_basic_attack.tscn" id="4_xd76i"]
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("basic_attack")]
 script = ExtResource("1_xgl3o")
-stats = ExtResource("2_48ucn")
+basic_attack = NodePath("EnemyBasicAttack")
+stats = ExtResource("2_vgs3o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_2im1w")
+
+[node name="EnemyBasicAttack" parent="." node_paths=PackedStringArray("enemy", "sprite") instance=ExtResource("4_xd76i")]
+enemy = NodePath("..")
+sprite = NodePath("../Sprite2D")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgb2aspid31ps"]
+
+[ext_resource type="Script" path="res://scripts/prefabs/enemy_attacks/enemy_basic_attack.gd" id="1_i6xae"]
+
+[node name="EnemyBasicAttack" type="Node"]
+script = ExtResource("1_i6xae")

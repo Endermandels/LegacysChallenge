@@ -7,6 +7,7 @@
 [x] Make MP bar
 [x] Add placeholder music
 [x] Make player able to attack
+[x] Make enemy able to attack
 
 ## PR 1 (Today)
 
@@ -16,7 +17,6 @@
 
 ## PR 3 (Within a Month)
 
-[] Make enemy able to attack
 [] Add placeholder sound effects
 
 ## BACKLOG
@@ -33,3 +33,6 @@
 ## OPTIONAL
 
 [] Main menu
+[] Make Target class
+[] Add multiple enemies
+[] Add allies
