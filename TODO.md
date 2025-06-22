@@ -6,6 +6,7 @@
 [x] Make HP bar
 [x] Make MP bar
 [x] Add placeholder music
+[x] Make player able to attack
 
 ## PR 1 (Today)
 
@@ -15,7 +16,6 @@
 
 ## PR 3 (Within a Month)
 
-[] Make player able to attack
 [] Make enemy able to attack
 [] Add placeholder sound effects
 

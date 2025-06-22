@@ -1,10 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://0fj0xww58cv6"]
+[gd_scene load_steps=9 format=3 uid="uid://0fj0xww58cv6"]
 
 [ext_resource type="Script" path="res://scripts/scenes/battle.gd" id="1_4kbp3"]
 [ext_resource type="PackedScene" uid="uid://346hhjuuftrp" path="res://prefabs/player.tscn" id="1_25iol"]
 [ext_resource type="PackedScene" uid="uid://bqy72asv6choy" path="res://prefabs/enemy.tscn" id="2_hhmin"]
+[ext_resource type="Script" path="res://scripts/resources/stats.gd" id="3_gquu1"]
 [ext_resource type="Theme" uid="uid://deitiiq1aopnw" path="res://assets/themes/hud_theme.tres" id="4_p073g"]
 [ext_resource type="AudioStream" uid="uid://dqep8il214ml" path="res://assets/sfx/the-return-of-the-8-bit-era-301292.mp3" id="5_sxy3n"]
+
+[sub_resource type="Resource" id="Resource_rs0vi"]
+resource_local_to_scene = true
+script = ExtResource("3_gquu1")
+hp = 50
+atk = 5
+def = 5
+spd = 10
+
+[sub_resource type="Resource" id="Resource_6ya4u"]
+resource_local_to_scene = true
+script = ExtResource("3_gquu1")
+hp = 35
+atk = 3
+def = 2
+spd = 7
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_4kbp3")
@@ -22,12 +39,15 @@ offset_bottom = 184.0
 color = Color(0.78, 0.45734, 0.2106, 1)
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." node_paths=PackedStringArray("atk_btn") instance=ExtResource("1_25iol")]
+[node name="Player" parent="." node_paths=PackedStringArray("enemy", "atk_btn") instance=ExtResource("1_25iol")]
 position = Vector2(24, 136)
+enemy = NodePath("../Enemy")
 atk_btn = NodePath("../AttackButton")
+stats = SubResource("Resource_rs0vi")
 
 [node name="Enemy" parent="." instance=ExtResource("2_hhmin")]
 position = Vector2(296, 136)
+stats = SubResource("Resource_6ya4u")
 
 [node name="AttackButton" type="Button" parent="."]
 offset_left = 8.0

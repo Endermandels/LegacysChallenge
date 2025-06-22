@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://dr11uwgqin5eg"]
+
+[ext_resource type="Script" path="res://scripts/resources/stats.gd" id="1_10har"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_10har")
+hp = 35
+atk = 3
+def = 2
+spd = 7

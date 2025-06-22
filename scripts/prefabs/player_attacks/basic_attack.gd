@@ -1,0 +1,72 @@
+extends PlayerAttack
+class_name PlayerBasicAttack
+
+var enemy: Enemy = null
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if stored_power > 0.01 and event.is_action_pressed("btn1"):
+		_unleash()
+
+func _process(delta: float) -> void:
+	if stored_power > 0.01:
+		_increase_power(delta)
+
+## Move forward a bit,
+## Start raising staff (animation),
+## Press and hold Button 1 within the grace period,
+## Release Button 1 before the timer runs out,
+## Spawn roots from floor corresponding to power threshold (animation),
+## Deal damage to enemy,
+## Return to original position
+func start(enemies: Array[Enemy]) -> void:
+	assert(len(enemies) == 1, "Should be exactly one enemy")
+	enemy = enemies[0]
+
+	# Move forward
+	var tween := get_tree().create_tween()
+	tween.tween_property(sprite, "position", Vector2(50, 0), 0.6).finished.connect(_charge)
+
+func _charge() -> void:
+	print("* Charging power for basic attack...")
+
+	stored_power = 0.02
+
+	var timer := get_tree().create_timer(max_thresh)
+	timer.timeout.connect(_unleash)
+
+func _increase_power(delta: float):
+	stored_power += delta
+
+func _unleash() -> void:
+	if stored_power < 0.01:
+		return
+
+	# Power thresholds
+	# OK
+	# GOOD
+	# GREAT
+	# EXCELLENT
+	# OK
+
+	if stored_power < ok_thresh:
+		print("! OK")
+		enemy.get_hit(player.stats.atk)
+	elif stored_power < good_thresh:
+		print("! GOOD")
+		enemy.get_hit(player.stats.atk + 10)
+	elif stored_power < great_thresh:
+		print("! GREAT")
+		enemy.get_hit(player.stats.atk * 2 + 10)
+	elif stored_power < excellent_thresh:
+		print("! EXCELLENT")
+		enemy.get_hit(player.stats.atk * 3 + 15)
+	else:
+		print("! OK")
+		enemy.get_hit(player.stats.atk)
+	
+	enemy = null
+	stored_power = 0.0
+
+	# Reset position
+	var tween := get_tree().create_tween()
+	tween.tween_property(sprite, "position", Vector2(0, 0), 0.8)

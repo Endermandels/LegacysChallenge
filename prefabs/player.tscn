@@ -1,16 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://346hhjuuftrp"]
+[gd_scene load_steps=5 format=3 uid="uid://346hhjuuftrp"]
 
 [ext_resource type="Texture2D" uid="uid://i3ivstqp5e06" path="res://assets/images/player.png" id="1_51wsp"]
 [ext_resource type="Script" path="res://scripts/prefabs/player.gd" id="1_jm316"]
-[ext_resource type="PackedScene" uid="uid://cys4udknhcf2y" path="res://prefabs/player_attacks/player_attack.tscn" id="3_ccruk"]
+[ext_resource type="Resource" uid="uid://dr11uwgqin5eg" path="res://resources/stats.tres" id="2_8mckv"]
+[ext_resource type="PackedScene" uid="uid://dbv4gyoyp8ded" path="res://prefabs/player_attacks/basic_attack.tscn" id="3_gakgb"]
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "basic_attack")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("basic_attack")]
 script = ExtResource("1_jm316")
-sprite = NodePath("Sprite2D")
-basic_attack = NodePath("PlayerAttack")
+basic_attack = NodePath("BasicAttack")
+stats = ExtResource("2_8mckv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_51wsp")
 
-[node name="PlayerAttack" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("3_ccruk")]
+[node name="BasicAttack" parent="." node_paths=PackedStringArray("player", "sprite") instance=ExtResource("3_gakgb")]
+player = NodePath("..")
 sprite = NodePath("../Sprite2D")
