@@ -1,0 +1,37 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://deitiiq1aopnw"]
+
+[ext_resource type="FontFile" uid="uid://dv0u8ra4657i3" path="res://assets/fonts/Bruce Forever.ttf" id="1_ndw0q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78apt"]
+bg_color = Color(0.792073, 0.35045, 0.0628575, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5vw2"]
+bg_color = Color(0.788235, 0.333333, 0.333333, 1)
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.560784, 0.145098, 0.282353, 1)
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_th1sc"]
+bg_color = Color(0.79, 0.3318, 0.3318, 1)
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.56, 0.1456, 0.283733, 1)
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fyoi6"]
+bg_color = Color(1, 0.33, 0.408167, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yjoe"]
+bg_color = Color(0.374667, 1, 0.33, 1)
+
+[resource]
+default_font = ExtResource("1_ndw0q")
+Button/styles/hover = SubResource("StyleBoxFlat_78apt")
+Button/styles/normal = SubResource("StyleBoxFlat_c5vw2")
+Label/styles/normal = SubResource("StyleBoxFlat_th1sc")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_fyoi6")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_2yjoe")
