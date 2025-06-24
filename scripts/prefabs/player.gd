@@ -3,8 +3,9 @@ class_name Player
 
 @export_group("Nodes")
 @export var battle_state: BattleState ## Battle State
-@export var atk_btn: Button
+@export var hud: HUD
 @export var enemy: Enemy ## TODO: Add selection option
+@export_subgroup("Internal")
 @export var sprite: Sprite2D ## Player sprite
 @export var basic_attack: PlayerBasicAttack
 
@@ -14,9 +15,10 @@ class_name Player
 var ducking = false
 
 signal turn_ended
+signal turn_started
 
 func _ready() -> void:
-    atk_btn.pressed.connect(basic_attack.start.bind([enemy] as Array[Enemy]))
+    hud.basic_attack_selected.connect(basic_attack.start.bind([enemy] as Array[Enemy]))
     basic_attack.ended.connect(end_turn)
 
 func _process(_delta: float) -> void:
@@ -26,10 +28,9 @@ func _process(_delta: float) -> void:
         rise()
 
 func start_turn() -> void:
-    atk_btn.disabled = false
+    turn_started.emit()
 
 func end_turn() -> void:
-    atk_btn.disabled = true
     turn_ended.emit()
 
 func duck() -> void:

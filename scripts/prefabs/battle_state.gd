@@ -13,7 +13,9 @@ func _ready() -> void:
 
 func _on_turn_ended() -> void:
 	if player_turn:
+		print("* Enemy turn")
 		enemy.start_turn()
 	else:
+		print("* Player turn")
 		player.start_turn()
 	player_turn = not player_turn

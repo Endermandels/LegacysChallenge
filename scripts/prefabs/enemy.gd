@@ -3,6 +3,7 @@ class_name Enemy
 
 @export_group("Nodes")
 @export var player: Player ## TODO: Determine at runtime
+@export_subgroup("Internal")
 @export var basic_attack: EnemyBasicAttack
 
 @export_group("Resources")

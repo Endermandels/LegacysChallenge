@@ -14,6 +14,8 @@
 
 ## PR 2 (Within a Week)
 
+[] Code HP bar
+[] Code MP bar
 
 ## PR 3 (Within a Month)
 
