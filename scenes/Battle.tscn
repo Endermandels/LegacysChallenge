@@ -11,7 +11,7 @@
 [sub_resource type="Resource" id="Resource_s48gi"]
 resource_local_to_scene = true
 script = ExtResource("3_gquu1")
-hp = 50
+max_hp = 50
 atk = 5
 def = 5
 spd = 10
@@ -19,8 +19,8 @@ spd = 10
 [sub_resource type="Resource" id="Resource_mcgpc"]
 resource_local_to_scene = true
 script = ExtResource("3_gquu1")
-hp = 35
-atk = 10
+max_hp = 50
+atk = 20
 def = 3
 spd = 7
 

@@ -3,35 +3,39 @@
 [ext_resource type="Script" path="res://scripts/prefabs/hud.gd" id="1_51vg8"]
 [ext_resource type="Theme" uid="uid://deitiiq1aopnw" path="res://assets/themes/hud_theme.tres" id="1_vf0f8"]
 
-[node name="HUD" type="Control" node_paths=PackedStringArray("atk_btn")]
+[node name="HUD" type="Control" node_paths=PackedStringArray("atk_btn", "hp_bar", "hp_label")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_51vg8")
 atk_btn = NodePath("AttackButton")
+hp_bar = NodePath("HPBar")
+hp_label = NodePath("HPLabel")
 
 [node name="HPBar" type="ProgressBar" parent="."]
+layout_mode = 0
 offset_left = 63.0
 offset_top = 164.0
 offset_right = 141.0
 offset_bottom = 167.0
 theme = ExtResource("1_vf0f8")
-value = 50.0
+value = 100.0
 show_percentage = false
 
 [node name="MPBar" type="ProgressBar" parent="."]
 self_modulate = Color(0, 0.566667, 1, 1)
+layout_mode = 0
 offset_left = 63.0
 offset_top = 172.0
 offset_right = 141.0
 offset_bottom = 175.0
 theme = ExtResource("1_vf0f8")
-value = 50.0
 show_percentage = false
 
 [node name="HPLabel" type="Label" parent="."]
 layout_direction = 3
+layout_mode = 0
 offset_left = -19.0
 offset_top = 160.0
 offset_right = 22.0
@@ -42,6 +46,7 @@ horizontal_alignment = 2
 
 [node name="MPLabel" type="Label" parent="."]
 layout_direction = 3
+layout_mode = 0
 offset_left = -19.0
 offset_top = 169.0
 offset_right = 10.0
@@ -51,6 +56,7 @@ text = "0/10"
 horizontal_alignment = 2
 
 [node name="AttackButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 24.0
 offset_right = 64.0
@@ -59,6 +65,7 @@ theme = ExtResource("1_vf0f8")
 text = "ATK"
 
 [node name="SpecialButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 72.0
 offset_top = 24.0
 offset_right = 120.0

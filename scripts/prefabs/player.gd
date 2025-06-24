@@ -16,6 +16,7 @@ var ducking = false
 
 signal turn_ended
 signal turn_started
+signal got_hit(amount, stats)
 
 func _ready() -> void:
     hud.basic_attack_selected.connect(basic_attack.start.bind([enemy] as Array[Enemy]))
@@ -49,5 +50,6 @@ func rise() -> void:
 func get_hit(dmg: int) -> void:
     var adj_dmg = clampi(dmg - stats.def, 5, dmg)
     stats.hp = clampi(stats.hp - adj_dmg, 0, stats.hp)
-    print("Player hit for %d" % dmg)
+    print("Player hit for %d" % adj_dmg)
     print("Player HP: %d" % stats.hp)
+    got_hit.emit(adj_dmg, stats)

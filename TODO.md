@@ -8,13 +8,13 @@
 [x] Add placeholder music
 [x] Make player able to attack
 [x] Make enemy able to attack
+[x] Code HP bar
 
 ## PR 1 (Today)
 
 
 ## PR 2 (Within a Week)
 
-[] Code HP bar
 [] Code MP bar
 
 ## PR 3 (Within a Month)

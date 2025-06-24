@@ -5,7 +5,7 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_4ytc4")
-hp = 50
+max_hp = 50
 atk = 5
 def = 5
 spd = 10

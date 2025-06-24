@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://i3ivstqp5e06" path="res://assets/images/player.png" id="1_51wsp"]
 [ext_resource type="Script" path="res://scripts/prefabs/player.gd" id="1_jm316"]
 [ext_resource type="Resource" uid="uid://dalarumqejqe7" path="res://resources/player_stats.tres" id="2_0dxtm"]
-[ext_resource type="PackedScene" uid="uid://dbv4gyoyp8ded" path="res://prefabs/player_attacks/basic_attack.tscn" id="3_gakgb"]
+[ext_resource type="PackedScene" path="res://prefabs/player_attacks/basic_attack.tscn" id="3_gakgb"]
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "basic_attack")]
 script = ExtResource("1_jm316")
