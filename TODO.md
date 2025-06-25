@@ -9,22 +9,24 @@
 [x] Make player able to attack
 [x] Make enemy able to attack
 [x] Code HP bar
+[x] Code MP bar
 
 ## PR 1 (Today)
 
 
 ## PR 2 (Within a Week)
 
-[] Code MP bar
 
 ## PR 3 (Within a Month)
 
-[] Add placeholder sound effects
+[] Make win screen
+[] Make lose screen
 
 ## BACKLOG
 
 [] Make player able to special attack
 [] Make enemy able to attack 2
+[] Add placeholder sound effects
 [] Add QUICK N' DIRTY player sprite
 [] Add QUICK N' DIRTY enemy sprite
 [] Add QUICK N' DIRTY hurt animation

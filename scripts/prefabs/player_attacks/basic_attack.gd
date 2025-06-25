@@ -47,23 +47,28 @@ func _unleash() -> void:
     # GREAT
     # EXCELLENT
     # OK
+    var result: String = ""
 
     if stored_power < ok_thresh:
-        print("! OK")
+        result = "OK"
         enemy.get_hit(player.stats.atk)
     elif stored_power < good_thresh:
-        print("! GOOD")
+        result = "GOOD"
         enemy.get_hit(player.stats.atk + 10)
     elif stored_power < great_thresh:
-        print("! GREAT")
+        result = "GREAT"
         enemy.get_hit(player.stats.atk * 2 + 10)
     elif stored_power < excellent_thresh:
-        print("! EXCELLENT")
+        result = "EXCELLENT"
         enemy.get_hit(player.stats.atk * 3 + 15)
     else:
-        print("! OK")
+        result = "OK"
         enemy.get_hit(player.stats.atk)
     
+    print("! %s" % result)
+    enemy_hit.emit(result)
+    
+    # Reset internal variables
     enemy = null
     stored_power = 0.0
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/prefabs/hud.gd" id="1_51vg8"]
 [ext_resource type="Theme" uid="uid://deitiiq1aopnw" path="res://assets/themes/hud_theme.tres" id="1_vf0f8"]
 
-[node name="HUD" type="Control" node_paths=PackedStringArray("atk_btn", "hp_bar", "hp_label")]
+[node name="HUD" type="Control" node_paths=PackedStringArray("atk_btn", "hp_bar", "mp_bar", "hp_label", "mp_label")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -11,7 +11,9 @@ offset_bottom = 40.0
 script = ExtResource("1_51vg8")
 atk_btn = NodePath("AttackButton")
 hp_bar = NodePath("HPBar")
+mp_bar = NodePath("MPBar")
 hp_label = NodePath("HPLabel")
+mp_label = NodePath("MPLabel")
 
 [node name="HPBar" type="ProgressBar" parent="."]
 layout_mode = 0
@@ -31,6 +33,7 @@ offset_top = 172.0
 offset_right = 141.0
 offset_bottom = 175.0
 theme = ExtResource("1_vf0f8")
+value = 100.0
 show_percentage = false
 
 [node name="HPLabel" type="Label" parent="."]
@@ -52,7 +55,7 @@ offset_top = 169.0
 offset_right = 10.0
 offset_bottom = 182.0
 theme_override_font_sizes/font_size = 8
-text = "0/10"
+text = "10/10"
 horizontal_alignment = 2
 
 [node name="AttackButton" type="Button" parent="."]

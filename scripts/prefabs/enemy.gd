@@ -21,7 +21,6 @@ func end_turn() -> void:
     turn_ended.emit()
 
 func get_hit(dmg: int) -> void:
-    var adj_dmg = clampi(dmg - stats.def, 5, dmg)
-    stats.hp = clampi(stats.hp - adj_dmg, 0, stats.hp)
-    print("Enemy hit for %d" % dmg)
+    stats.take_dmg(dmg)
+    print("Enemy hit for %d" % stats.get_adj_dmg(dmg))
     print("Enemy HP: %d" % stats.hp)

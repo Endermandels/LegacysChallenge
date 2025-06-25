@@ -23,7 +23,12 @@ Main functions:
 
 var stored_power: float = 0.0 ## Amount of time/number of hits stored up
 
-signal ended
+signal ended ## When the attack ends
+
+## When the enemy is struck by the attack. [br]
+## 
+## category: "OK" | "GOOD" | "GREAT" | "EXCELLENT" 
+signal enemy_hit(category: String) 
 
 ## TODO: Implement
 func start(enemies: Array[Enemy]) -> void:

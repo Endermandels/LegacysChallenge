@@ -16,11 +16,11 @@ var ducking = false
 
 signal turn_ended
 signal turn_started
-signal got_hit(amount, stats)
 
 func _ready() -> void:
     hud.basic_attack_selected.connect(basic_attack.start.bind([enemy] as Array[Enemy]))
     basic_attack.ended.connect(end_turn)
+    basic_attack.enemy_hit.connect(hit_enemy)
 
 func _process(_delta: float) -> void:
     if not ducking and not battle_state.player_turn and Input.is_action_just_pressed("btn1"):
@@ -48,8 +48,9 @@ func rise() -> void:
     tween.tween_property(sprite, "scale", Vector2(1,1), 0.1).finished.connect(func (): ducking = false)
 
 func get_hit(dmg: int) -> void:
-    var adj_dmg = clampi(dmg - stats.def, 5, dmg)
-    stats.hp = clampi(stats.hp - adj_dmg, 0, stats.hp)
-    print("Player hit for %d" % adj_dmg)
+    stats.take_dmg(dmg)
+    print("Player hit for %d" % stats.get_adj_dmg(dmg))
     print("Player HP: %d" % stats.hp)
-    got_hit.emit(adj_dmg, stats)
+
+func hit_enemy(category: String) -> void:
+    stats.increase_mp(category)
