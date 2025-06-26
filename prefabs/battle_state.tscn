@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyyiqxdx2kqgp"]
+[gd_scene load_steps=2 format=3 uid="uid://c318631lb7er6"]
 
 [ext_resource type="Script" path="res://scripts/prefabs/battle_state.gd" id="1_jkl3p"]
 

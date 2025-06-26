@@ -10,6 +10,8 @@
 [x] Make enemy able to attack
 [x] Code HP bar
 [x] Code MP bar
+[x] Make win screen
+[x] Fix enemy HP = 1 not dying
 
 ## PR 1 (Today)
 
@@ -19,7 +21,6 @@
 
 ## PR 3 (Within a Month)
 
-[] Make win screen
 [] Make lose screen
 
 ## BACKLOG

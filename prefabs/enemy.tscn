@@ -5,8 +5,9 @@
 [ext_resource type="Resource" uid="uid://cpsjfm1ts536l" path="res://resources/enemy_stats.tres" id="2_vgs3o"]
 [ext_resource type="PackedScene" uid="uid://bgb2aspid31ps" path="res://prefabs/enemy_attacks/enemy_basic_attack.tscn" id="4_xd76i"]
 
-[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("basic_attack")]
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "basic_attack")]
 script = ExtResource("1_xgl3o")
+sprite = NodePath("Sprite2D")
 basic_attack = NodePath("EnemyBasicAttack")
 stats = ExtResource("2_vgs3o")
 

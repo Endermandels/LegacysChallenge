@@ -21,6 +21,7 @@ func _ready() -> void:
     hud.basic_attack_selected.connect(basic_attack.start.bind([enemy] as Array[Enemy]))
     basic_attack.ended.connect(end_turn)
     basic_attack.enemy_hit.connect(hit_enemy)
+    stats.reset()
 
 func _process(_delta: float) -> void:
     if not ducking and not battle_state.player_turn and Input.is_action_just_pressed("btn1"):

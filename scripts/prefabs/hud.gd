@@ -26,10 +26,10 @@ func _ready() -> void:
 
     # Stats
     hp_bar.max_value = player.stats.max_hp
-    hp_bar.value = hp_bar.max_value
+    hp_bar.value = player.stats.hp
     hp_label.text = "%s/%s" % [player.stats.hp, player.stats.max_hp]
     mp_bar.max_value = player.stats.max_mp
-    mp_bar.value = 0
+    mp_bar.value = player.stats.mp
     mp_label.text = "%s/%s" % [player.stats.mp, player.stats.max_mp]
 
 func _change_hp(amount: int) -> void:

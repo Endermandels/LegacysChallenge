@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bqy72asv6choy" path="res://prefabs/enemy.tscn" id="2_hhmin"]
 [ext_resource type="Script" path="res://scripts/resources/stats.gd" id="3_gquu1"]
 [ext_resource type="AudioStream" uid="uid://dqep8il214ml" path="res://assets/sfx/the-return-of-the-8-bit-era-301292.mp3" id="5_sxy3n"]
-[ext_resource type="PackedScene" path="res://prefabs/battle_state.tscn" id="7_dwx0i"]
+[ext_resource type="PackedScene" uid="uid://c318631lb7er6" path="res://prefabs/battle_state.tscn" id="7_dwx0i"]
 [ext_resource type="PackedScene" uid="uid://hd0wmplokju4" path="res://prefabs/hud.tscn" id="8_eu4vb"]
 
 [sub_resource type="Resource" id="Resource_s48gi"]
